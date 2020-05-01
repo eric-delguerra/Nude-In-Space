@@ -58,5 +58,6 @@ public class DialogManager : MonoBehaviour
     private void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        GameObject.Find("Player").gameObject.GetComponent<PlayerController>().enabled = true;
     }
 }

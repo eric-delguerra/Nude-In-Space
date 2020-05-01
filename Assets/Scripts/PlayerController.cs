@@ -28,10 +28,11 @@ public class PlayerController : MonoBehaviour {
                 print(wear.name);
             }
             GameObject.Find("WearsItems").gameObject.GetComponentInChildren<DialogueTrigger>().TriggerDialogue();
-            // FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+            StopMovement();
             other.gameObject.SetActive(false);
         } else if (other.tag == "History")
         {
+            StopMovement();
             GameObject.Find("HistoryZones").transform.GetChild(historyIndex).gameObject.GetComponentInChildren<DialogueTrigger>().TriggerDialogue();
             GameObject.Find("HistoryZones").transform.GetChild(historyIndex).gameObject.SetActive(false);
             historyIndex++;
@@ -45,5 +46,13 @@ public class PlayerController : MonoBehaviour {
         float moveVertical = Input.GetAxis ("Vertical");
         Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
         rb2d.AddForce (movement * speed);
+    }
+
+    void StopMovement()
+    {
+        rb2d.velocity = Vector2.zero;
+        gameObject.GetComponent<PlayerController>().enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
