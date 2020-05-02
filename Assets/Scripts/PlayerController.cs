@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     private int maxHealth = 100;
     private Rigidbody2D rb2d;
     public Targets[] targetses;
+    public LifeReduce[] dangerItems;
     private int indexTarget = 0; 
     private List<GameObject> wearItems = new List<GameObject>();
     public int historyIndex = 0;
     public HealthBar HealthBar;
     public TextMeshProUGUI objectifText;
+    public Animator animator;
     
 
     void Start()
@@ -29,17 +31,14 @@ public class PlayerController : MonoBehaviour
    }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.tag == "Wear")
         {
+            StartCoroutine(VolumeLow(other));
+            other.GetComponent<AudioSource>().Play();
             wearItems.Add(other.gameObject);
-            foreach (var wear in wearItems)
-            {
-                print(wear.name);
-            }
-
-            GameObject.Find("WearsItems").gameObject.GetComponentInChildren<DialogueTrigger>().TriggerDialogue();
+            other.GetComponent<DialogueTrigger>().TriggerDialogue();
             StopMovement();
-            other.gameObject.SetActive(false);
         }
         else if (other.tag == "History")
         {
@@ -51,10 +50,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator VolumeLow(Collider2D other)
+    {
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().volume -= 0.2f;
+        yield return new WaitForSeconds(1.5f);
+        other.gameObject.SetActive(false);
+
+    }
+
+    private void Update()
+    {
+        // for (int i = 0; i < dangerItems.Length; i++)
+        // {
+        //     if (Mathf.Round(Vector2.Distance(transform.position, dangerItems[i].targetPosition)) < 10f)
+        //     {
+        //         // dangerItems[i].gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.position.x, transform.position.y));
+        //     }
+        // }
+    }
+
     void FixedUpdate()
     {
        Movement();
-       print(Mathf.Round(Vector2.Distance(transform.position, targetses[0].targetPosition)));
        objectifText.text = targetses[indexTarget].name + " se trouve à " +
                            Mathf.Round(Vector2.Distance(transform.position, targetses[0].targetPosition)) + "m.";
 
@@ -77,7 +94,16 @@ public class PlayerController : MonoBehaviour
     void Movement()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
+        if (moveHorizontal < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
         float moveVertical = Input.GetAxis("Vertical");
+        animator.SetFloat("Speed", Mathf.Abs(moveHorizontal + moveVertical));
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2d.AddForce(movement * speed);
     }

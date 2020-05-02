@@ -57,7 +57,14 @@ public class DialogManager : MonoBehaviour
     }
     private void EndDialogue()
     {
+        StartCoroutine(VolumeHigh());
         animator.SetBool("IsOpen", false);
         GameObject.Find("Player").gameObject.GetComponent<PlayerController>().enabled = true;
+    }
+    
+    private IEnumerator VolumeHigh()
+    {
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().volume += 0.2f;
+        yield return new WaitForSeconds(3);
     }
 }

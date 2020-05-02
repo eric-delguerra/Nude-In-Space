@@ -16,5 +16,11 @@ public class Targets : MonoBehaviour
         targetPosition = transform.position;
     }
 
- 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
