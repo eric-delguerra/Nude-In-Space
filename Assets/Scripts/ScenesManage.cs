@@ -9,7 +9,6 @@ public class ScenesManage : MonoBehaviour
     
     public void LoadNextScene()
     {
-        print("ALO");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
