@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!50 &5862963490428456369
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077299807413828136}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!95 &3305261434746673527
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077299807413828136}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b31c2545d07cb04da2d82ff8c88225c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &8404251520182935815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3663633753500359471, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_Name
+      value: Le slipe Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359471, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359632, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359632, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359633, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 907d86c1b6d69314bb839f04f1e5d3ab,
+        type: 3}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 131.09706
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -30.418053
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.41308594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.40368
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40368
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359634, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.40368
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359635, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: Dialogue.name
+      value: Le slip
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359635, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: Dialogue.sentences.Array.data[0]
+      value: "Ah te voil\xE0 toi ! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359635, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: Dialogue.sentences.Array.data[1]
+      value: "Au moins si je rencontre quelqu'un ca ne parra\xEEtra pas bizarre. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359636, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: targetPosition.x
+      value: 131.0971
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663633753500359636, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+        type: 3}
+      propertyPath: targetPosition.y
+      value: -30.41805
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8acb50d1550b7744ba0148f1e2a6e30, type: 3}
+--- !u!1 &5077299807413828136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3663633753500359471, guid: b8acb50d1550b7744ba0148f1e2a6e30,
+    type: 3}
+  m_PrefabInstance: {fileID: 8404251520182935815}
+  m_PrefabAsset: {fileID: 0}

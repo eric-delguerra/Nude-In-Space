@@ -7,11 +7,18 @@ public class LimitArea : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        WarningEngine.instance.EnterArea();
+        if (other.tag == "Player")
+        {
+            WarningEngine.instance.EnterArea();
+        }
+        
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        WarningEngine.instance.ExitArea();
+        if (other.tag == "Player")
+        {
+            WarningEngine.instance.ExitArea();
+        }
     }
 }

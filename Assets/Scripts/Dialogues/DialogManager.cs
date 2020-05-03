@@ -11,16 +11,20 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI textName;
     public TextMeshProUGUI dialogueText;
     private Queue<String> sentences;
+    public LevelLoader levelLoader;
 
     public Animator animator;
+
+    private bool loadNext;
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, bool nextLvl)
     {
+        loadNext = nextLvl;
         animator.SetBool("IsOpen", true);
         textName.text = dialogue.name;
         sentences.Clear();
@@ -30,6 +34,7 @@ public class DialogManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+
         DisplayNextSentence();
     }
 
@@ -37,6 +42,11 @@ public class DialogManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
+            if (loadNext)
+            {
+                StartCoroutine(NextLevel());
+            }
+
             EndDialogue();
             return;
         }
@@ -44,6 +54,12 @@ public class DialogManager : MonoBehaviour
         String sentence = sentences.Dequeue();
         StopAllCoroutines();    
         StartCoroutine(TypeSentence(sentence));
+    }
+
+    private IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(3f);
+        levelLoader.GetComponent<LevelLoader>().loadNextLevel();
     }
 
     IEnumerator TypeSentence(String sentence)

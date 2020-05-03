@@ -9,9 +9,15 @@ public class Targets : MonoBehaviour
     public String Name;
 
     public Vector2 targetPosition;
+
     
     // Start is called before the first frame update
     void Start()
+    {
+        targetPosition = transform.position;
+    }
+
+    private void FixedUpdate()
     {
         targetPosition = transform.position;
     }

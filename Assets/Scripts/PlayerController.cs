@@ -35,16 +35,15 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Wear")
         {
             StartCoroutine(VolumeLow(other));
-            other.GetComponent<AudioSource>().Play();
             wearItems.Add(other.gameObject);
-            other.GetComponent<DialogueTrigger>().TriggerDialogue();
+            other.GetComponent<DialogueTrigger>().TriggerDialogue(true);
             StopMovement();
         }
         else if (other.tag == "History")
         {
             StopMovement();
             GameObject.Find("HistoryZones").transform.GetChild(historyIndex).gameObject
-                .GetComponentInChildren<DialogueTrigger>().TriggerDialogue();
+                .GetComponentInChildren<DialogueTrigger>().TriggerDialogue(false);
             GameObject.Find("HistoryZones").transform.GetChild(historyIndex).gameObject.SetActive(false);
             historyIndex++;
         }
@@ -53,7 +52,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator VolumeLow(Collider2D other)
     {
         GameObject.Find("Main Camera").GetComponent<AudioSource>().volume -= 0.2f;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.45f);
         other.gameObject.SetActive(false);
 
     }
