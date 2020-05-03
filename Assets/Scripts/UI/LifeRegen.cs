@@ -12,8 +12,15 @@ public class LifeRegen : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            GetComponent<AudioSource>().Play();
             healthBar.SetHealth(player.GetHealth() + amountLife);
-            gameObject.SetActive(false);
+            StartCoroutine("Disable");
         }
+    }
+
+    private IEnumerator Disable()
+    {
+        yield return new WaitForSeconds(0.45f);
+        gameObject.SetActive(false);
     }
 }

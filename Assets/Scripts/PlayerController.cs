@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
        if (targetses.Length > indexTarget)
        {
            objectifText.text = targetses[indexTarget].name + " se trouve à " +
-                                      Mathf.Round(Vector2.Distance(transform.position, targetses[0].targetPosition)) + "m.";
+                                      Mathf.Round(Vector2.Distance(transform.position, targetses[indexTarget].targetPosition)) + "m.";
        }
 
     }

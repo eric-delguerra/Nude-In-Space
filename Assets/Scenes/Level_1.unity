@@ -3004,7 +3004,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63dbad9d50332d846aa02a0278020322, type: 3}
@@ -5227,7 +5227,7 @@ GameObject:
   - component: {fileID: 905871262}
   - component: {fileID: 905871268}
   m_Layer: 0
-  m_Name: Slip
+  m_Name: Le slip
   m_TagString: Wear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10187,6 +10187,10 @@ MonoBehaviour:
   HealthBar: {fileID: 1124375370}
   objectifText: {fileID: 99627315}
   animator: {fileID: 1820015204}
+  alienPos: {fileID: 0}
+  pressF: {fileID: 0}
+  alien: {fileID: 0}
+  persons: []
 --- !u!50 &1820015202
 Rigidbody2D:
   serializedVersion: 4
