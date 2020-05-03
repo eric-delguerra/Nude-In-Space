@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wear
   - History
+  - AlienItems
+  - Alien
   layers:
   - Default
   - TransparentFX

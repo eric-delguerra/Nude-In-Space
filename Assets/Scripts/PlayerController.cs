@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,11 +19,14 @@ public class PlayerController : MonoBehaviour
     public HealthBar HealthBar;
     public TextMeshProUGUI objectifText;
     public Animator animator;
-    
+    public Transform alienPos;
+    public GameObject pressF;
+    public GameObject alien;
+    public Image[] persons;
 
     void Start()
     {
-        
+        alienPos = GameObject.Find("Alien").GetComponent<Alien>().GetAlienPos();
         rb2d = GetComponent<Rigidbody2D>();
         health = maxHealth;
         HealthBar.SetMaxHealth(maxHealth);
@@ -46,6 +50,17 @@ public class PlayerController : MonoBehaviour
                 .GetComponentInChildren<DialogueTrigger>().TriggerDialogue(false);
             GameObject.Find("HistoryZones").transform.GetChild(historyIndex).gameObject.SetActive(false);
             historyIndex++;
+        } else if (other.tag == "AlienItems")
+        {
+            StartCoroutine(VolumeLow(other));
+            StopMovement();
+            other.GetComponent<DialogueTrigger>().TriggerDialogue(false);
+            print(targetses.Length + "Lgt");
+            print(indexTarget + "index");
+            if (targetses.Length > indexTarget)
+            {
+                indexTarget++;
+            }
         }
     }
 
@@ -59,20 +74,42 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // for (int i = 0; i < dangerItems.Length; i++)
-        // {
-        //     if (Mathf.Round(Vector2.Distance(transform.position, dangerItems[i].targetPosition)) < 10f)
-        //     {
-        //         // dangerItems[i].gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.position.x, transform.position.y));
-        //     }
-        // }
+        if (Mathf.Round(Vector2.Distance(transform.position, alienPos.position)) < 5)
+        {
+            pressF.SetActive(true);
+            
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (indexTarget == targetses.Length)
+                {
+                    persons[1].gameObject.SetActive(true);
+                    persons[0].gameObject.SetActive(false);
+                    alien.GetComponent<DialogueTrigger>().AlienWord(true);
+
+                }
+                else
+                {
+                    persons[1].gameObject.SetActive(true);
+                    persons[0].gameObject.SetActive(false);
+                    alien.GetComponent<DialogueTrigger>().TriggerDialogue(false);
+                }
+            }
+        }
+        else
+        {
+            pressF.SetActive(false);
+
+        }
     }
 
     void FixedUpdate()
     {
        Movement();
-       objectifText.text = targetses[indexTarget].name + " se trouve à " +
-                           Mathf.Round(Vector2.Distance(transform.position, targetses[0].targetPosition)) + "m.";
+       if (targetses.Length > indexTarget)
+       {
+           objectifText.text = targetses[indexTarget].name + " se trouve à " +
+                                      Mathf.Round(Vector2.Distance(transform.position, targetses[0].targetPosition)) + "m.";
+       }
 
     }
 
