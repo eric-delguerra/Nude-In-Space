@@ -17,6 +17,10 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>BuildV</Path>
+      <Path>BuildV2</Path>
+      <Path>BuildWebGL</Path>
+      <Path>Builds</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>

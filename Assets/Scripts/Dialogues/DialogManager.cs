@@ -13,19 +13,31 @@ public class DialogManager : MonoBehaviour
     private Queue<String> sentences;
     public LevelLoader levelLoader;
 
-    public Animator animator;
+    public Animator animator = null;
+    public GameObject dialogueZone;
 
     private bool loadNext;
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        dialogueZone.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DisplayNextSentence();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue, bool nextLvl)
     {
         loadNext = nextLvl;
-        animator.SetBool("IsOpen", true);
+        // animator.SetBool("IsOpen", true);
+        dialogueZone.SetActive(true);
+        
         textName.text = dialogue.name;
         sentences.Clear();
 
@@ -74,8 +86,9 @@ public class DialogManager : MonoBehaviour
     private void EndDialogue()
     {
         StartCoroutine(VolumeHigh());
-        animator.SetBool("IsOpen", false);
+        // animator.SetBool("IsOpen", false);
         GameObject.Find("Player").gameObject.GetComponent<PlayerController>().enabled = true;
+        dialogueZone.SetActive(false);
     }
     
     private IEnumerator VolumeHigh()

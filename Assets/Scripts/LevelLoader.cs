@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,14 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
 
     public float transitionTime;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            BackToMenu();
+        }
+    }
 
     public void loadNextLevel()
     {

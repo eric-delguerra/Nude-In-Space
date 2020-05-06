@@ -1252,7 +1252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219448994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.403299, y: -0.3910762, z: -0.41308594}
+  m_LocalPosition: {x: -8, y: -268, z: -0.41308594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 976285044}
@@ -3613,8 +3613,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 4.36}
+  m_SizeDelta: {x: 0, y: 8.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614281667
 MonoBehaviour:
@@ -4558,10 +4558,10 @@ RectTransform:
   m_Father: {fileID: 1453186730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 35.5}
+  m_SizeDelta: {x: 300, y: 71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &821240622
 MonoBehaviour:
@@ -4607,7 +4607,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821240620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 52d6c9e94e6a00547900cab82ac0c86a, type: 2}
   m_CullingMode: 0
@@ -5116,6 +5116,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1508189678}
   levelLoader: {fileID: 2005460736}
   animator: {fileID: 1453186731}
+  dialogueZone: {fileID: 1453186729}
 --- !u!4 &888420938
 Transform:
   m_ObjectHideFlags: 0
@@ -5383,7 +5384,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6abcbde90beb5b14f9035224398cc31d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5582,7 +5583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: 234}
+  m_AnchoredPosition: {x: 0.000011444, y: 135}
   m_SizeDelta: {x: 225.6, y: 37.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &921871351
@@ -6050,10 +6051,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6997,10 +6998,10 @@ RectTransform:
   m_Father: {fileID: 1982835014}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00001955, y: 275}
-  m_SizeDelta: {x: 263.65, y: 27.65}
+  m_AnchorMin: {x: 0.5, y: 0.827}
+  m_AnchorMax: {x: 0.5, y: 0.827}
+  m_AnchoredPosition: {x: 0, y: 33}
+  m_SizeDelta: {x: 263.65002, y: 1.6499939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1127507140
 GameObject:
@@ -8308,10 +8309,10 @@ RectTransform:
   m_Father: {fileID: 976285044}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.2200554e-10, y: -564}
-  m_SizeDelta: {x: 299.4, y: 71.1}
+  m_AnchorMin: {x: 0.5, y: 0.12551823}
+  m_AnchorMax: {x: 0.51250005, y: 0.19957179}
+  m_AnchoredPosition: {x: -12, y: -2.5}
+  m_SizeDelta: {x: 275.40002, y: -1.9000244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1453186731
 Animator:
@@ -8321,7 +8322,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453186729}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 66743fe077d57cd4a800c674bebea3ca, type: 2}
   m_CullingMode: 0
@@ -10927,7 +10928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

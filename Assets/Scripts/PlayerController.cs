@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -19,20 +20,39 @@ public class PlayerController : MonoBehaviour
     public HealthBar HealthBar;
     public TextMeshProUGUI objectifText;
     public Animator animator;
-    public Transform alienPos;
+    public Transform alienPos = null;
     public GameObject pressF;
-    public GameObject alien;
-    public Image[] persons;
+    public GameObject alien = null;
+    public Image[] persons = null;
 
     void Start()
     {
-        alienPos = GameObject.Find("Alien").GetComponent<Alien>().GetAlienPos();
+        SetCarachterLevelAnimation();
+        if (alienPos != null)alienPos = GameObject.Find("Alien").GetComponent<Alien>().GetAlienPos();
         rb2d = GetComponent<Rigidbody2D>();
         health = maxHealth;
         HealthBar.SetMaxHealth(maxHealth);
         InvokeRepeating("Oxygen", 1f, 1f);
                      
    }
+
+    private void SetCarachterLevelAnimation()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1 :
+                animator.SetBool("level1", true);
+                break;
+            case 2 :
+                animator.SetBool("level2", true);
+                break;
+            case 3 :
+                animator.SetBool("level3", true);
+                break;
+        }
+
+        
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         
@@ -74,31 +94,35 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Mathf.Round(Vector2.Distance(transform.position, alienPos.position)) < 5)
+        if (alienPos != null)
         {
-            pressF.SetActive(true);
+            if (Mathf.Round(Vector2.Distance(transform.position, alienPos.position)) < 5)
+                    {
+                        pressF.SetActive(true);
+                        
+                        if (Input.GetKeyDown(KeyCode.F))
+                        {
+                            if (indexTarget == targetses.Length)
+                            {
+                                persons[1].gameObject.SetActive(true);
+                                persons[0].gameObject.SetActive(false);
+                                alien.GetComponent<DialogueTrigger>().AlienWord(true);
             
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                if (indexTarget == targetses.Length)
-                {
-                    persons[1].gameObject.SetActive(true);
-                    persons[0].gameObject.SetActive(false);
-                    alien.GetComponent<DialogueTrigger>().AlienWord(true);
+                            }
+                            else
+                            {
+                                persons[1].gameObject.SetActive(true);
+                                persons[0].gameObject.SetActive(false);
+                                alien.GetComponent<DialogueTrigger>().TriggerDialogue(false);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        pressF.SetActive(false);
 
-                }
-                else
-                {
-                    persons[1].gameObject.SetActive(true);
-                    persons[0].gameObject.SetActive(false);
-                    alien.GetComponent<DialogueTrigger>().TriggerDialogue(false);
-                }
-            }
         }
-        else
-        {
-            pressF.SetActive(false);
-
+        
         }
     }
 
