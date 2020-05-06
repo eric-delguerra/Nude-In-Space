@@ -6,6 +6,9 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
+/BuildV/
+/BuildV2/
+/[Bb]uildWebGL/
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
